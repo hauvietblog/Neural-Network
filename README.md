@@ -20,3 +20,4 @@ $$\Phi^{(l+1)}:=\mathbf{Z}^{(l+1)}=\mathbf{W}^{(l+1)}\mathbf{a}^{(l)}+\mathbf{b}
 $$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{Z}^{(l+1)}),~~l \in [L-1]$$
 
 Chúng ta coi $\mathbf{W}^{(l)} \in \mathbb{R}^{N_l \times N_{l-1}}$ và $\mathbf{b}^{(l)} \in \mathbb{R}^{N_l}$ là ma trận trọng số và vector bias.
+## [Backpropagation](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/?fbclid=IwAR2awLv1m6QkU7pDlpusUjOOrv4R61TSFLyllhuTPneuxUTpQhJmB3s3Is8)
