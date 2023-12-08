@@ -13,5 +13,12 @@ $$\begin{aligned}
 \Phi_\alpha:\mathbb{R}^{N_0}\times\mathbb{R}^{P_N} &\to \mathbb{R}^{N_L} \\\\ (\mathbf{x},\theta) &\mapsto \Phi_\alpha(\mathbf{x},\theta) = \Phi^L(\mathbf{x},\theta)
 \end{aligned}$$
 
-Với mọi $\mathbf{x} \in \mathbb{R}^{N_0}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((W^{(l)},b^{(l)}))\_{l=1}^L \in \times\_{l=0}^{L-1}(\mathbb{R}^{N_l N\_{l+1}}\times \mathbb{R}^{N\_{l+1}})\cong \mathbb{R}^{P(N)}.$ Ta định nghĩa
-$$\Phi^{(1)}=\mathbf{W}^{(1)}\mathbf{x}+b$$
+Với mọi $\mathbf{x} \in \mathbb{R}^{N_0}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((W^{(l)},b^{(l)}))\_{l=1}^L \in \bigtimes\limits\_{l=0}^{L-1}(\mathbb{R}^{N_l N\_{l+1}}\times \mathbb{R}^{N\_{l+1}})\cong \mathbb{R}^{P(N)}.$ Ta định nghĩa  
+
+$$\Phi^{(1)}:=z^{(1)}=\mathbf{W}^{(1)}\mathbf{x}+\mathbf{b}^{(1)},$$   
+
+$$\bar\Phi^{(l)}:=a^{(l)}=\sigma(z^{(l)}),~~l \in [L-1],$$
+
+$$\Phi^{(l+1)}:=z^{(l+1)}=\mathbf{W}^{(l+1)}a^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
+
+$$\bar\Phi^{(l+1)}:=a^{(l+1)}=\sigma(z^{(l+1)}),~~l \in [L-1]$$
