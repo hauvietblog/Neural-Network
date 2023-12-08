@@ -2,11 +2,7 @@
 ## [Neural Networks](https://machinelearningcoban.com/2017/02/24/mlp/)
 Định nghĩa: Cho $L \in \mathbb{N}, N = (N_0,N_l,\dots,N_L) \in \mathbb{N}^{L+1}$ và $\sigma:\mathbb{R} \to \mathbb{R}.$ $\sigma$ là activation function, $L$ là số lượng layers, 
 và $N_0,N_L,N_l,l \in [L-1]$ lần lượt là số lượng neural đầu vào, đầu ra và layer ẩn thứ $l$. Khi đó $P(N)$ là số lượng tham số.
-
 $$P(N)=\sum_{l=1}^{L} N_l N_{l-1}+ N_{l}$$
-
-  
-
 Xét ánh xạ:
 
 $$\begin{aligned} 
