@@ -15,12 +15,12 @@ $$\begin{aligned}
 
 Với mọi $\mathbf{x} \in \mathbb{R}^{N_0}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((W^{(l)},b^{(l)}))\_{l=1}^L \in \bigtimes\limits\_{l=1}^{L}(\mathbb{R}^{N_l\times N\_{l-1}}\times \mathbb{R}^{N\_{l}})\cong \mathbb{R}^{P(N)},$ đặt $\Phi\_{\alpha}(\mathbf{x},\theta)=\Phi^L(\mathbf{x},\theta)$ trong đó $\alpha=(N,\sigma)$ thì
 
-$$\Phi^{(1)}:=z^{(1)}=\mathbf{W}^{(1)}\mathbf{x}+\mathbf{b}^{(1)},$$   
+$$\Phi^{(1)}:=\mathbf{Z}^{(1)}=\mathbf{W}^{(1)}\mathbf{x}+\mathbf{b}^{(1)},$$   
 
-$$\bar\Phi^{(l)}:=a^{(l)}=\sigma(z^{(l)}),~~l \in [L-1],$$
+$$\bar\Phi^{(l)}:=\mathbf{a}^{(l)}=\sigma(\mathbf{Z}^{(l)}),~~l \in [L-1],$$
 
-$$\Phi^{(l+1)}:=z^{(l+1)}=\mathbf{W}^{(l+1)}a^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
+$$\Phi^{(l+1)}:=\mathbf{Z}^{(l+1)}=\mathbf{W}^{(l+1)}\mathbf{a}^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
 
-$$\bar\Phi^{(l+1)}:=a^{(l+1)}=\sigma(z^{(l+1)}),~~l \in [L-1]$$
+$$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{Z}^{(l+1)}),~~l \in [L-1]$$
 
-Chúng ta coi $W^{(l)} \in \mathbb{R}^{N_l \times N_{l-1}}$ và $b^{(l)} \in \mathbb{R}^{N_l}$ là ma trận trọng số và vector bias.
+Chúng ta coi $\mathbf{W}^{(l)} \in \mathbb{R}^{N_l \times N_{l-1}}$ và $\mathbf{b}^{(l)} \in \mathbb{R}^{N_l}$ là ma trận trọng số và vector bias.
