@@ -20,4 +20,36 @@ $$\Phi^{(l+1)}:=\mathbf{Z}^{(l+1)}=\mathbf{W}^{(l+1)T}\mathbf{a}^{(l)}+\mathbf{b
 $$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{Z}^{(l+1)}),~~l \in [L-1]$$
 
 Chúng ta coi $\mathbf{W}^{(l)} \in \mathbb{R}^{d^{(l-1)} \times d^{(l)}}$ và $\mathbf{b}^{(l)} \in \mathbb{R}^{d^{(l)}}$ là ma trận trọng số và vector bias.
-## [Backpropagation](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/?fbclid=IwAR2awLv1m6QkU7pDlpusUjOOrv4R61TSFLyllhuTPneuxUTpQhJmB3s3Is8)
+## [Backpropagation cho Stochastic Gradient Descent](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/?fbclid=IwAR2awLv1m6QkU7pDlpusUjOOrv4R61TSFLyllhuTPneuxUTpQhJmB3s3Is8)
+Đặt $\mathbf{e}^{(l)} = [e_1^{(l)}, e_2^{(l)}, …, e_{d^{(l)}}^{(l)}]^T \in \mathbb{R}^{d^{(l)}\times 1}$. Ta sẽ có quy tắc tính như sau:
+1. Feedforward: Với 1 giá trị đầu vào $\mathbf{x}$, tính giá trị đầu ra của network, trong quá trình tính toán, lưu lại các activation $\mathbf{a}^{(l)}$ tại mỗi layer.
+
+$$\begin{aligned}
+\mathbf{a}^{(0)} &= \mathbf{x} \\\\ z_{i}^{(l)} &= \mathbf{w}_i^{(l)T}\mathbf{a}^{(l-1)} + b_i^{(l)} \\\\
+\mathbf{z}^{(l)} &= \mathbf{W}^{(l)T}\mathbf{a}^{(l-1)} + \mathbf{b}^{(l)},~~ l =  1, 2, \dots, L \\\\
+\mathbf{a}^{(l)} &= f(\mathbf{z}^{(l)}), ~~ l =  1, 2, \dots, L \\\\
+\mathbf{\hat{y}} &= \mathbf{a}^{(L)}
+\end{aligned}$$
+
+2. Với output layer, tính:
+
+$$\mathbf{e}^{(L)} = \frac{\partial J}{\partial \mathbf{z}^{(L)}}$$  
+
+3. Từ đó suy ra:
+
+$$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(L)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(L)}},\frac{\partial J}{\partial \mathbf{w}_2^{(L)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(L)}}^{(L)}} \right) = \begin{pmatrix}
+\frac{\partial J}{\partial \mathbf{w}\_{11}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(l)}}^{(L)}}\\ 
+\frac{\partial J}{\partial \mathbf{w}\_{21}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{22}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{2d^{(l)}}^{(L)}}\\ 
+\frac{\partial J}{\partial \mathbf{w}\_{d^{(l-1)}1}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{d^{(l-1)}2}^{(L)}}&\frac{\partial J}{\partial\mathbf{w}\_{d^{(l-1)}d^{(l)}}^{(L)}}
+\end{pmatrix}
+\end{aligned}$$
+
+$$=\begin{pmatrix}
+e_1^{(L)}a_1^{(L-1)}&e_2^{(L)}a_1^{(L-1)}&e\_{d^{(L)}}^{(L)}a_1^{(L-1)}\\ 
+e_1^{(L)}a_2^{(L-1)}&e_2^{(L)}a_2^{(L-1)}&e\_{d^{(L)}}^{(L)}a_2^{(L-1)}\\ 
+e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L)}a\_{d^{(L-1)}}^{(L-1)}\\
+\end{pmatrix}$$
+
+
+
+
