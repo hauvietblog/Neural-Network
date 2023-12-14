@@ -38,9 +38,9 @@ $$\mathbf{e}^{(L)} = \frac{\partial J}{\partial \mathbf{z}^{(L)}}$$
 3. Từ đó suy ra:
 
 $$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(L)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(L)}},\frac{\partial J}{\partial \mathbf{w}_2^{(L)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(L)}}^{(L)}} \right) = \begin{pmatrix}
-\frac{\partial J}{\partial \mathbf{w}\_{11}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(l)}}^{(L)}}\\ 
-\frac{\partial J}{\partial \mathbf{w}\_{21}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{22}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{2d^{(l)}}^{(L)}}\\ 
-\frac{\partial J}{\partial \mathbf{w}\_{d^{(l-1)}1}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{d^{(l-1)}2}^{(L)}}&\frac{\partial J}{\partial\mathbf{w}\_{d^{(l-1)}d^{(l)}}^{(L)}}
+\frac{\partial J}{\partial \mathbf{w}\_{11}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(L)}}^{(L)}}\\ 
+\frac{\partial J}{\partial \mathbf{w}\_{21}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{22}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{2d^{(L)}}^{(L)}}\\ 
+\frac{\partial J}{\partial \mathbf{w}\_{d^{(L-1)}1}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{d^{(L-1)}2}^{(L)}}&\frac{\partial J}{\partial\mathbf{w}\_{d^{(L-1)}d^{(L)}}^{(L)}}
 \end{pmatrix}
 \end{aligned}$$
 
@@ -48,7 +48,7 @@ $$=\begin{pmatrix}
 e_1^{(L)}a_1^{(L-1)}&e_2^{(L)}a_1^{(L-1)}&e\_{d^{(L)}}^{(L)}a_1^{(L-1)}\\ 
 e_1^{(L)}a_2^{(L-1)}&e_2^{(L)}a_2^{(L-1)}&e\_{d^{(L)}}^{(L)}a_2^{(L-1)}\\ 
 e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L)}a\_{d^{(L-1)}}^{(L-1)}\\
-\end{pmatrix}$$
+\end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e^{(L)T}}   ~~~~~~~~~~~~~~~   $$
 
 
 
