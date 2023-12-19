@@ -48,8 +48,12 @@ $$=\begin{pmatrix}
 e_1^{(L)}a_1^{(L-1)}&e_2^{(L)}a_1^{(L-1)}&e\_{d^{(L)}}^{(L)}a_1^{(L-1)}\\ 
 e_1^{(L)}a_2^{(L-1)}&e_2^{(L)}a_2^{(L-1)}&e\_{d^{(L)}}^{(L)}a_2^{(L-1)}\\ 
 e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L)}a\_{d^{(L-1)}}^{(L-1)}\\
-\end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e^{(L)T}}   ~~~~~~~~~~~~~~~   $$
+\end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e^{(L)T}}$$
 
+  Tương tự 
+$$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\mathbf{e}^{(L)}$$
+  Trong đó $\mathbf{e}^{(L)} = [e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}]^T \in \mathbb{R}^{d^{(L)}\times 1}$  
 
+4. Với $l = L-1,L-2,\dots,1$, tính:
 
 
