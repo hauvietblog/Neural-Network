@@ -48,7 +48,7 @@ e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L
 
   Tương tự 
 $$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\mathbf{e}^{(L)}$$
-  Trong đó $\mathbf{e}^{(L)} = [e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}]^T \in \mathbb{R}^{d^{(L)}\times 1}$  
+  Trong đó $\mathbf{e}^{(L)} = \left\(e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}\right)^T \in \mathbb{R}^{d^{(L)}\times 1}$  
 
 3. Với $l = L-1,L-2,\dots,1$, tính:
 
@@ -65,5 +65,24 @@ e_1^{(l)}a_2^{(l-1)}&e_2^{(l)}a_2^{(l-1)}&e_{d^{(l)}}^{(l)}a_2^{(l-1)}\\
 e_1^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_2^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_{d^{(l)}}^{(l)}a_{d^{(l-1)}}^{(l-1)}\\
 \end{pmatrix}= \mathbf{a}^{(l-1)}\mathbf{e^{(l)T}}$$
 
+Trong đó 
+
+$$\mathbf{e}^{(l)} =
+\begin{pmatrix}
+e_1^{(l)}\\ 
+e_2^{(l)}\\
+\vdots \\
+e_{d^{(l)}}^{(l)}
+\end{pmatrix}=\begin{pmatrix}
+\frac{\partial J}{\partial z_1^{(l)}}\\ 
+\frac{\partial J}{\partial z_2^{(l)}}\\ 
+\vdots\\ 
+\frac{\partial J}{\partial z_{d^{(l)}}^{(l)}}
+\end{pmatrix}=\begin{pmatrix}
+\frac{\partial J}{\partial a_1^{(l)}}\cdot \frac{\partial a_1^{(l)}}{\partial z_1^{(l)}}\\ 
+\frac{\partial J}{\partial a_2^{(l)}}\cdot \frac{\partial a_2^{(l)}}{\partial z_2^{(l)}}\\ 
+\vdots \\ 
+\frac{\partial J}{\partial a_{d^{(l)}}^{(l)}}\cdot \frac{\partial a_{d^{(l)}}^{(l)}}{\partial z_{d^{(l)}}^{(l)}}
+\end{pmatrix}$$
 
 
