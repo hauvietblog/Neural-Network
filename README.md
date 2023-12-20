@@ -31,11 +31,7 @@ $$\begin{aligned}
 \mathbf{\hat{y}} &= \mathbf{a}^{(L)}
 \end{aligned}$$
 
-2. Với output layer, tính:
-
-$$\mathbf{e}^{(L)} = \frac{\partial J}{\partial \mathbf{z}^{(L)}}$$  
-
-3. Từ đó suy ra:
+2. Tính:
 
 $$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(L)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(L)}},\frac{\partial J}{\partial \mathbf{w}_2^{(L)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(L)}}^{(L)}} \right) = \begin{pmatrix}
 \frac{\partial J}{\partial \mathbf{w}\_{11}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(L)}}^{(L)}}\\ 
@@ -54,6 +50,20 @@ e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L
 $$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\mathbf{e}^{(L)}$$
   Trong đó $\mathbf{e}^{(L)} = [e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}]^T \in \mathbb{R}^{d^{(L)}\times 1}$  
 
-4. Với $l = L-1,L-2,\dots,1$, tính:
+3. Với $l = L-1,L-2,\dots,1$, tính:
+
+$$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(l)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(l)}},\frac{\partial J}{\partial \mathbf{w}_2^{(l)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(l)}}^{(l)}} \right) = \begin{pmatrix}
+\frac{\partial J}{\partial \mathbf{w}\_{11}^{(l)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(l)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(l)}}^{(l)}}\\ 
+\frac{\partial J}{\partial \mathbf{w}\_{21}^{(l)}}&\frac{\partial J}{\partial \mathbf{w}\_{22}^{(l)}}& \frac{\partial J}{\partial \mathbf{w}\_{2d^{(l)}}^{(l)}}\\ 
+\frac{\partial J}{\partial \mathbf{w}\_{d^{(l-1)}1}^{(l)}}&\frac{\partial J}{\partial \mathbf{w}\_{d^{(l-1)}2}^{(l)}}&\frac{\partial J}{\partial\mathbf{w}\_{d^{(l-1)}d^{(l)}}^{(l)}}
+\end{pmatrix}
+\end{aligned}$$
+
+$$=\begin{pmatrix}
+e_1^{(l)}a_1^{(l-1)}&e_2^{(l)}a_1^{(l-1)}&e_{d^{(l)}}^{(l)}a_1^{(l-1)}\\
+e_1^{(l)}a_2^{(l-1)}&e_2^{(l)}a_2^{(l-1)}&e_{d^{(l)}}^{(l)}a_2^{(l-1)}\\
+e_1^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_2^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_{d^{(l)}}^{(l)}a_{d^{(l-1)}}^{(l-1)}\\
+\end{pmatrix}= \mathbf{a}^{(l-1)}\mathbf{e^{(l)T}}$$
+
 
 
