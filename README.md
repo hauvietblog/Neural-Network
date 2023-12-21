@@ -67,22 +67,24 @@ e_1^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_2^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_{d^{(l)}}^{(l)}a
 
 Trong đó 
 
-$$\mathbf{e}^{(l)} =
-\begin{pmatrix}
-e_1^{(l)}\\ 
-e_2^{(l)}\\
-\vdots \\
-e_{d^{(l)}}^{(l)}
-\end{pmatrix}=\begin{pmatrix}
-\frac{\partial J}{\partial z_1^{(l)}}\\ 
-\frac{\partial J}{\partial z_2^{(l)}}\\ 
-\vdots\\ 
-\frac{\partial J}{\partial z_{d^{(l)}}^{(l)}}
-\end{pmatrix}=\begin{pmatrix}
+$$\mathbf{e}^{(l)} = \begin{pmatrix}e_1^{(l)} & e_2^{(l)} \dots e_{d^{(l)}}^{(l)}\end{pmatrix}^T=\begin{pmatrix}
+\frac{\partial J}{\partial z_1^{(l)}}&\frac{\partial J}{\partial z_2^{(l)}} \dots \frac{\partial J}{\partial z_{d^{(l)}}^{(l)}}\end{pmatrix}^T=\begin{pmatrix}
 \frac{\partial J}{\partial a_1^{(l)}}\cdot \frac{\partial a_1^{(l)}}{\partial z_1^{(l)}}\\ 
 \frac{\partial J}{\partial a_2^{(l)}}\cdot \frac{\partial a_2^{(l)}}{\partial z_2^{(l)}}\\ 
 \vdots \\ 
 \frac{\partial J}{\partial a_{d^{(l)}}^{(l)}}\cdot \frac{\partial a_{d^{(l)}}^{(l)}}{\partial z_{d^{(l)}}^{(l)}}
+\end{pmatrix}=\begin{pmatrix}
+\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_1^{(l)}}\right) {\sigma}'(z_1^{(l)})\\ 
+\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_2^{(l)}}\right) {\sigma}'(z_2^{(l)})\\
+\vdots \\
+\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_{d^{(l)}}^{(l)}}\right) {\sigma}'(z_{d^{(l)}}^{(l)})
+\end{pmatrix}$$
+
+$$=\begin{pmatrix}
+\sum_{k=1}^{d^{(l+1)}}e_k^{(l+1)}\cdot w_{1k}^{(l+1)}\cdot {\sigma}'(z_1^{(l)})\\ 
+\sum_{k=1}^{d^{(l+1)}}e_k^{(l+1)}\cdot w_{2k}^{(l+1)}\cdot {\sigma}'(z_2^{(l)})\\
+\vdots \\
+\sum_{k=1}^{d^{(l+1)}}e_k^{(l+1)}\cdot w_{d^{(l)}k}^{(l+1)}\cdot {\sigma}'(z_{d^{(l)}}^{(l)})
 \end{pmatrix}$$
 
 
