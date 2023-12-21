@@ -9,13 +9,13 @@ $$\begin{aligned}
 \Phi_\alpha:\mathbb{R}^{d^{(0)}}\times\mathbb{R}^{P(d)} &\to \mathbb{R}^{d^{(L)}} \\\\ (\mathbf{x},\theta) &\mapsto \Phi_\alpha(\mathbf{x},\theta) 
 \end{aligned}$$
 
-Với mọi $\mathbf{x} \in \mathbb{R}^{d^{(0)}}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((W^{(l)},b^{(l)}))\_{l=1}^L \in \bigtimes\limits\_{l=1}^{L}(\mathbb{R}^{d^{(l-1)}\times d^{(l)}}\times \mathbb{R}^{d\^{(l)}})\cong \mathbb{R}^{P(d)},$ đặt $\Phi\_{\alpha}(\mathbf{x},\theta)=\Phi^L(\mathbf{x},\theta)$ trong đó $\alpha=(d,\sigma)$ thì
+Với mọi $\mathbf{x} \in \mathbb{R}^{d^{(0)}}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((\mathbf{W}^{(l)},\mathbf{b}^{(l)}))\_{l=1}^L \in \bigtimes\limits\_{l=1}^{L}(\mathbb{R}^{d^{(l-1)}\times d^{(l)}}\times \mathbb{R}^{d\^{(l)}})\cong \mathbb{R}^{P(d)},$ đặt $\Phi\_{\alpha}(\mathbf{x},\theta)=\Phi^L(\mathbf{x},\theta)$ trong đó $\alpha=(d,\sigma)$ thì
 
-$$\Phi^{(1)}:=\mathbf{Z}^{(1)}=\mathbf{W}^{(l)T}\mathbf{x}+\mathbf{b}^{(1)},$$   
+$$\Phi^{(1)}:=\mathbf{z}^{(1)}=\mathbf{W}^{(l)T}\mathbf{x}+\mathbf{b}^{(1)},$$   
 
-$$\bar\Phi^{(l)}:=\mathbf{a}^{(l)}=\sigma(\mathbf{Z}^{(l)}),~~l \in [L-1],$$
+$$\bar\Phi^{(l)}:=\mathbf{a}^{(l)}=\sigma(\mathbf{z}^{(l)}),~~l \in [L-1],$$
 
-$$\Phi^{(l+1)}:=\mathbf{Z}^{(l+1)}=\mathbf{W}^{(l+1)T}\mathbf{a}^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
+$$\Phi^{(l+1)}:=\mathbf{z}^{(l+1)}=\mathbf{W}^{(l+1)T}\mathbf{a}^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
 
 $$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{Z}^{(l+1)}),~~l \in [L-1]$$
 
@@ -44,7 +44,7 @@ $$=\begin{pmatrix}
 e_1^{(L)}a_1^{(L-1)}&e_2^{(L)}a_1^{(L-1)}&e\_{d^{(L)}}^{(L)}a_1^{(L-1)}\\ 
 e_1^{(L)}a_2^{(L-1)}&e_2^{(L)}a_2^{(L-1)}&e\_{d^{(L)}}^{(L)}a_2^{(L-1)}\\ 
 e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L)}a\_{d^{(L-1)}}^{(L-1)}\\
-\end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e^{(L)T}}$$
+\end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e}^{(L)T}$$
 
   Tương tự 
 $$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\mathbf{e}^{(L)}$$
@@ -81,10 +81,15 @@ $$\mathbf{e}^{(l)} = \begin{pmatrix}e_1^{(l)} & e_2^{(l)} \dots e_{d^{(l)}}^{(l)
 \end{pmatrix}$$
 
 $$=\begin{pmatrix}
-\sum_{k=1}^{d^{(l+1)}}e_k^{(l+1)}\cdot w_{1k}^{(l+1)}\cdot {\sigma}'(z_1^{(l)})\\ 
-\sum_{k=1}^{d^{(l+1)}}e_k^{(l+1)}\cdot w_{2k}^{(l+1)}\cdot {\sigma}'(z_2^{(l)})\\
+\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{1k}^{(l+1)}\right) {\sigma}'(z_1^{(l)})\\ 
+\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{2k}^{(l+1)}\right) {\sigma}'(z_2^{(l)})\\
 \vdots \\
-\sum_{k=1}^{d^{(l+1)}}e_k^{(l+1)}\cdot w_{d^{(l)}k}^{(l+1)}\cdot {\sigma}'(z_{d^{(l)}}^{(l)})
-\end{pmatrix}$$
+\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{d^{(l)}k}^{(l+1)}\right) {\sigma}'(z_{d^{(l)}}^{(l)})
+\end{pmatrix}=\begin{pmatrix}
+\left(\mathbf{w}\_{1:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_1^{(l)})\\
+\left(\mathbf{w}\_{2:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_2^{(l)})\\
+\vdots\\
+\left(\mathbf{w}\_{d^{(l)}:}^{(l+1)}\mathbf{e^{(l+1)}}{\sigma}'(z_{d^{(l)}}^{(l)})\right)
+\end{pmatrix}=\left(\mathbf{W}^{(l+1)}\mathbf{e^{(l+1)}}\right)\odot{\sigma}'(\mathbf{z}^{(l)})$$
 
 
