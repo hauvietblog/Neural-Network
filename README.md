@@ -74,17 +74,17 @@ $$\mathbf{e}^{(l)} = \begin{pmatrix}e_1^{(l)} & e_2^{(l)} \dots e_{d^{(l)}}^{(l)
 \vdots \\ 
 \frac{\partial J}{\partial a_{d^{(l)}}^{(l)}}\cdot \frac{\partial a_{d^{(l)}}^{(l)}}{\partial z_{d^{(l)}}^{(l)}}
 \end{pmatrix}=\begin{pmatrix}
-\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_1^{(l)}}\right) {\sigma}'(z_1^{(l)})\\ 
-\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_2^{(l)}}\right) {\sigma}'(z_2^{(l)})\\
+\displaystyle\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_1^{(l)}}\right) {\sigma}'(z_1^{(l)})\\ 
+\displaystyle\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_2^{(l)}}\right) {\sigma}'(z_2^{(l)})\\
 \vdots \\
-\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_{d^{(l)}}^{(l)}}\right) {\sigma}'(z_{d^{(l)}}^{(l)})
+\displaystyle\sum_{k=1}^{d^{(l+1)}}\left(\frac{\partial J}{\partial z_k^{(l+1)}}\cdot \frac{\partial z_k^{(l+1)}}{\partial a_{d^{(l)}}^{(l)}}\right) {\sigma}'(z_{d^{(l)}}^{(l)})
 \end{pmatrix}$$
 
 $$=\begin{pmatrix}
-\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{1k}^{(l+1)}\right) {\sigma}'(z_1^{(l)})\\ 
-\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{2k}^{(l+1)}\right) {\sigma}'(z_2^{(l)})\\
+\displaystyle\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{1k}^{(l+1)}\right) {\sigma}'(z_1^{(l)})\\ 
+\displaystyle\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{2k}^{(l+1)}\right) {\sigma}'(z_2^{(l)})\\
 \vdots \\
-\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{d^{(l)}k}^{(l+1)}\right) {\sigma}'(z_{d^{(l)}}^{(l)})
+\displaystyle\sum_{k=1}^{d^{(l+1)}}\left(e_k^{(l+1)} w_{d^{(l)}k}^{(l+1)}\right) {\sigma}'(z_{d^{(l)}}^{(l)})
 \end{pmatrix}=\begin{pmatrix}
 \left(\mathbf{w}\_{1:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_1^{(l)})\\
 \left(\mathbf{w}\_{2:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_2^{(l)})\\
