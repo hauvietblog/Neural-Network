@@ -33,7 +33,7 @@ B1. Feedforward: Với 1 giá trị đầu vào $\mathbf{x}$, tính giá trị �
 
 B2. Tính:
 
-$$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(L)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(L)}},\frac{\partial J}{\partial \mathbf{w}_2^{(L)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(L)}}^{(L)}} \right) = \begin{pmatrix}
+$$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(L)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(L)}}~~\frac{\partial J}{\partial \mathbf{w}_2^{(L)}}~\dots~\frac{\partial J}{\partial \mathbf{w}\_{d^{(L)}}^{(L)}} \right) = \begin{pmatrix}
 \frac{\partial J}{\partial \mathbf{w}\_{11}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(L)}}^{(L)}}\\ 
 \frac{\partial J}{\partial \mathbf{w}\_{21}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{22}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{2d^{(L)}}^{(L)}}\\ 
 \frac{\partial J}{\partial \mathbf{w}\_{d^{(L-1)}1}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{d^{(L-1)}2}^{(L)}}&\frac{\partial J}{\partial\mathbf{w}\_{d^{(L-1)}d^{(L)}}^{(L)}}
@@ -47,8 +47,8 @@ e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L
 \end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e}^{(L)T}$$
 
 Tương tự:
-$$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\mathbf{e}^{(L)}$$
-Trong đó $\mathbf{e}^{(L)} = \left\(e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}\right)^T \in \mathbb{R}^{d^{(L)}\times 1}$  
+
+$$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\left(\frac{\partial J}{\partial b_1^{(L)}} ~~ \frac{\partial J}{\partial b_2^{(L)}} ~ \dots ~ \frac{\partial J}{\partial b_{d^{(L)}}^{(L)}}\right)^T=\left(e_1^{(L)} ~~ e_2^{(L)} ~ \dots ~ e_{d^{(L)}}^{(L)}\right)^T=\mathbf{e}^{(L)}$$
 
 B3. Với $l = L-1,L-2,\dots,1$, tính:
 
