@@ -17,21 +17,21 @@ $$\bar\Phi^{(l)}:=\mathbf{a}^{(l)}=\sigma(\mathbf{z}^{(l)}),~~l \in [L-1],$$
 
 $$\Phi^{(l+1)}:=\mathbf{z}^{(l+1)}=\mathbf{W}^{(l+1)T}\mathbf{a}^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
 
-$$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{Z}^{(l+1)}),~~l \in [L-1]$$
+$$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{z}^{(l+1)}),~~l \in [L-1]$$
 
 Chúng ta coi $\mathbf{W}^{(l)} \in \mathbb{R}^{d^{(l-1)} \times d^{(l)}}$ và $\mathbf{b}^{(l)} \in \mathbb{R}^{d^{(l)}}$ là ma trận trọng số và vector bias.
 ## [Backpropagation cho Stochastic Gradient Descent](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/?fbclid=IwAR2awLv1m6QkU7pDlpusUjOOrv4R61TSFLyllhuTPneuxUTpQhJmB3s3Is8)
-Đặt $\mathbf{e}^{(l)} = [e_1^{(l)}, e_2^{(l)}, …, e_{d^{(l)}}^{(l)}]^T \in \mathbb{R}^{d^{(l)}\times 1}$. Ta sẽ có quy tắc tính như sau:
-1. Feedforward: Với 1 giá trị đầu vào $\mathbf{x}$, tính giá trị đầu ra của network, trong quá trình tính toán, lưu lại các activation $\mathbf{a}^{(l)}$ tại mỗi layer.
+Đặt $\mathbf{e}^{(l)} = \left(e_1^{(l)}, e_2^{(l)}, …, e_{d^{(l)}}^{(l)}\right)^T \in \mathbb{R}^{d^{(l)}\times 1}$. Ta sẽ có quy tắc tính như sau:  
+B1. Feedforward: Với 1 giá trị đầu vào $\mathbf{x}$, tính giá trị đầu ra của network, trong quá trình tính toán, lưu lại các activation $\mathbf{a}^{(l)}$ tại mỗi layer.
 
-$$\begin{aligned}
+  $$\begin{aligned}
 \mathbf{a}^{(0)} &= \mathbf{x} \\\\ z_{i}^{(l)} &= \mathbf{w}_i^{(l)T}\mathbf{a}^{(l-1)} + b_i^{(l)} \\\\
 \mathbf{z}^{(l)} &= \mathbf{W}^{(l)T}\mathbf{a}^{(l-1)} + \mathbf{b}^{(l)},~~ l =  1, 2, \dots, L \\\\
 \mathbf{a}^{(l)} &= f(\mathbf{z}^{(l)}), ~~ l =  1, 2, \dots, L \\\\
 \mathbf{\hat{y}} &= \mathbf{a}^{(L)}
 \end{aligned}$$
 
-2. Tính:
+B2. Tính:
 
 $$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(L)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(L)}},\frac{\partial J}{\partial \mathbf{w}_2^{(L)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(L)}}^{(L)}} \right) = \begin{pmatrix}
 \frac{\partial J}{\partial \mathbf{w}\_{11}^{(L)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(L)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(L)}}^{(L)}}\\ 
@@ -46,11 +46,11 @@ e_1^{(L)}a_2^{(L-1)}&e_2^{(L)}a_2^{(L-1)}&e\_{d^{(L)}}^{(L)}a_2^{(L-1)}\\
 e_1^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e_2^{(L)}a\_{d^{(L-1)}}^{(L-1)}&e\_{d^{(L)}}^{(L)}a\_{d^{(L-1)}}^{(L-1)}\\
 \end{pmatrix}= \mathbf{a}^{(L-1)}\mathbf{e}^{(L)T}$$
 
-  Tương tự 
+Tương tự:
 $$\frac{\partial J}{\partial \mathbf{b}^{(L)}}=\mathbf{e}^{(L)}$$
-  Trong đó $\mathbf{e}^{(L)} = \left\(e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}\right)^T \in \mathbb{R}^{d^{(L)}\times 1}$  
+Trong đó $\mathbf{e}^{(L)} = \left\(e_1^{(L)}, e_2^{(L)},\dots, e_{d^{(L)}}^{(L)}\right)^T \in \mathbb{R}^{d^{(L)}\times 1}$  
 
-3. Với $l = L-1,L-2,\dots,1$, tính:
+B3. Với $l = L-1,L-2,\dots,1$, tính:
 
 $$\begin{aligned}\frac{\partial J}{\partial \mathbf{W}^{(l)}} &= \left( \frac{\partial J}{\partial \mathbf{w}_1^{(l)}},\frac{\partial J}{\partial \mathbf{w}_2^{(l)}},\dots,\frac{\partial J}{\partial \mathbf{w}\_{d^{(l)}}^{(l)}} \right) = \begin{pmatrix}
 \frac{\partial J}{\partial \mathbf{w}\_{11}^{(l)}}&\frac{\partial J}{\partial \mathbf{w}\_{12}^{(l)}}& \frac{\partial J}{\partial \mathbf{w}\_{1d^{(l)}}^{(l)}}\\ 
@@ -65,7 +65,7 @@ e_1^{(l)}a_2^{(l-1)}&e_2^{(l)}a_2^{(l-1)}&e_{d^{(l)}}^{(l)}a_2^{(l-1)}\\
 e_1^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_2^{(l)}a_{d^{(l-1)}}^{(l-1)}&e_{d^{(l)}}^{(l)}a_{d^{(l-1)}}^{(l-1)}\\
 \end{pmatrix}= \mathbf{a}^{(l-1)}\mathbf{e^{(l)T}}$$
 
-Trong đó 
+Trong đó:
 
 $$\mathbf{e}^{(l)} = \begin{pmatrix}e_1^{(l)} & e_2^{(l)} \dots e_{d^{(l)}}^{(l)}\end{pmatrix}^T=\begin{pmatrix}
 \frac{\partial J}{\partial z_1^{(l)}}&\frac{\partial J}{\partial z_2^{(l)}} \dots \frac{\partial J}{\partial z_{d^{(l)}}^{(l)}}\end{pmatrix}^T=\begin{pmatrix}
@@ -92,4 +92,5 @@ $$=\begin{pmatrix}
 \left(\mathbf{w}\_{d^{(l)}:}^{(l+1)}\mathbf{e^{(l+1)}}{\sigma}'(z_{d^{(l)}}^{(l)})\right)
 \end{pmatrix}=\left(\mathbf{W}^{(l+1)}\mathbf{e^{(l+1)}}\right)\odot{\sigma}'(\mathbf{z}^{(l)})$$
 
-
+Tương tự:
+$$\frac{\partial J}{\partial \mathbf{b}^{(l)}}=\mathbf{e}^{(l)}$$
