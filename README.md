@@ -89,7 +89,7 @@ $$=\begin{pmatrix}
 \left(\mathbf{w}\_{1:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_1^{(l)})\\
 \left(\mathbf{w}\_{2:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_2^{(l)})\\
 \vdots\\
-\left(\mathbf{w}\_{d^{(l)}:}^{(l+1)}\mathbf{e^{(l+1)}}{\sigma}'(z_{d^{(l)}}^{(l)})\right)
+\left(\mathbf{w}\_{d^{(l)}:}^{(l+1)}\mathbf{e^{(l+1)}}\right){\sigma}'(z_{d^{(l)}}^{(l)})
 \end{pmatrix}=\left(\mathbf{W}^{(l+1)}\mathbf{e^{(l+1)}}\right)\odot{\sigma}'(\mathbf{z}^{(l)})$$
 
 Tương tự:
