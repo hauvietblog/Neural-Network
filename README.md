@@ -2,7 +2,7 @@
 ## [Neural Networks](https://machinelearningcoban.com/2017/02/24/mlp/)
 Định nghĩa: Cho $L \in \mathbb{N}, d = (d^{(0)},d^{(l)},\dots,d^{(L)}) \in \mathbb{N}^{L+1}$ và $\sigma:\mathbb{R} \to \mathbb{R}.$ $\sigma$ là activation function, $L$ là số lượng layers, 
 và $d^{(0)},d^{(L)},d^{(l)},l \in [L-1]$ lần lượt là số lượng neural đầu vào, đầu ra và layer ẩn thứ $l$. Khi đó $P(d)$ là số lượng tham số.
-$$P(d)=\sum_{l=1}^{L} d^{(l-1)} d^{(l)}+ d^{(l)}$$
+$$P(d)=\sum_{l=1}^{L} \left(d^{(l-1)} d^{(l)}+ d^{(l)}\right)$$
 Xét ánh xạ:
 
 $$\begin{aligned} 
