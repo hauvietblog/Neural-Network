@@ -11,13 +11,13 @@ $$\begin{aligned}
 
 Với mọi $\mathbf{x} \in \mathbb{R}^{d^{(0)}}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((\mathbf{W}^{(l)},\mathbf{b}^{(l)}))\_{l=1}^L \in \bigtimes\limits\_{l=1}^{L}(\mathbb{R}^{d^{(l-1)}\times d^{(l)}}\times \mathbb{R}^{d\^{(l)}})\cong \mathbb{R}^{P(d)},$ đặt $\Phi\_{\alpha}(\mathbf{x},\theta)=\Phi^L(\mathbf{x},\theta)$ trong đó $\alpha=(d,\sigma)$ thì
 
-$$\Phi^{(1)}:=\mathbf{z}^{(1)}=\mathbf{W}^{(1)T}\mathbf{x}+\mathbf{b}^{(1)},$$   
+$$\Phi^{(1)}(\mathbf{x},\theta):=\mathbf{z}^{(1)}=\mathbf{W}^{(1)T}\mathbf{x}+\mathbf{b}^{(1)},$$   
 
-$$\bar\Phi^{(l)}:=\mathbf{a}^{(l)}=\sigma(\mathbf{z}^{(l)}),~~l \in [L-1],$$
+$$\bar\Phi^{(l)}(\mathbf{x},\theta):=\mathbf{a}^{(l)}=\sigma(\mathbf{z}^{(l)}),~~l \in [L-1],$$
 
-$$\Phi^{(l+1)}:=\mathbf{z}^{(l+1)}=\mathbf{W}^{(l+1)T}\mathbf{a}^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
+$$\Phi^{(l+1)}(\mathbf{x},\theta):=\mathbf{z}^{(l+1)}=\mathbf{W}^{(l+1)T}\mathbf{a}^{(l)}+\mathbf{b}^{(l+1)},~~l \in [L-1]$$
 
-$$\bar\Phi^{(l+1)}:=\mathbf{a}^{(l+1)}=\sigma(\mathbf{z}^{(l+1)}),~~l \in [L-1]$$
+$$\bar\Phi^{(l+1)}(\mathbf{x},\theta):=\mathbf{a}^{(l+1)}=\sigma(\mathbf{z}^{(l+1)}),~~l \in [L-1]$$
 
 Chúng ta coi $\mathbf{W}^{(l)} \in \mathbb{R}^{d^{(l-1)} \times d^{(l)}}$ và $\mathbf{b}^{(l)} \in \mathbb{R}^{d^{(l)}}$ là ma trận trọng số và vector bias.
 ## [Backpropagation cho Stochastic Gradient Descent](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/?fbclid=IwAR2awLv1m6QkU7pDlpusUjOOrv4R61TSFLyllhuTPneuxUTpQhJmB3s3Is8)
