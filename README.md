@@ -11,7 +11,7 @@ $$\begin{aligned}
 
 Với mọi $\mathbf{x} \in \mathbb{R}^{d^{(0)}}$ và tham số $\theta = (\theta^{(l)})_{l=1}^L=((\mathbf{W}^{(l)},\mathbf{b}^{(l)}))\_{l=1}^L \in \bigtimes\limits\_{l=1}^{L}(\mathbb{R}^{d^{(l-1)}\times d^{(l)}}\times \mathbb{R}^{d\^{(l)}})\cong \mathbb{R}^{P(d)},$ đặt $\Phi\_{\alpha}(\mathbf{x},\theta)=\Phi^L(\mathbf{x},\theta)$ trong đó $\alpha=(d,\sigma)$ thì
 
-$$\Phi^{(1)}:=\mathbf{z}^{(1)}=\mathbf{W}^{(l)T}\mathbf{x}+\mathbf{b}^{(1)},$$   
+$$\Phi^{(1)}:=\mathbf{z}^{(1)}=\mathbf{W}^{(1)T}\mathbf{x}+\mathbf{b}^{(1)},$$   
 
 $$\bar\Phi^{(l)}:=\mathbf{a}^{(l)}=\sigma(\mathbf{z}^{(l)}),~~l \in [L-1],$$
 
